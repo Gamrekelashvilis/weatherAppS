@@ -1,0 +1,14 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(103, 156, 255, 0.692);
+    display: inline-block;
+}
+
+header{
+    height: 1000px;
+    width: 100px;
+    background-color: rgb(255, 0, 0);
+}

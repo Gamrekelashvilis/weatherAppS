@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<form method="POST" action="weather">
+    <select name="manu" id="the_select" style="margin-right: 6px;">
+        <option>აირჩიე ქალაქი</option>
+        <option value="https://amindi.ge/city/abastumani/აბასთუმანი">აბასთუმანი</option>
+        <option value="https://amindi.ge/city/akhaltsikhe/ახალციხე">ახალციხე</option>
+        <option value="https://amindi.ge/city/batumi/ბათუმი">ბათუმი</option>
+        <option value="https://amindi.ge/city/bakuriani/ბაკურიანი">ბაკურიანი</option>
+        <option value="https://amindi.ge/city/bolnisi/ბოლნისი">ბოლნისი</option>
+        <option value="https://amindi.ge/city/borjomi/ბორჯომი">ბორჯომი</option>
+        <option value="https://amindi.ge/city/gonio/გონიო">გონიო</option>
+        <option value="https://amindi.ge/city/gori/გორი">გორი</option>
+        <option value="https://amindi.ge/city/gudauri/გუდაური">გუდაური</option>
+        <option value="https://amindi.ge/city/gurjaani/გურჯაანი">გურჯაანი</option>
+        <option value="https://amindi.ge/city/davit-gareji/დავით-გარეჯი">დავით-გარეჯი</option>
+        <option value="https://amindi.ge/city/zestafoni/ზესტაფონი">ზესტაფონი</option>
+        <option value="https://amindi.ge/city/zugdidi/ზუგდიდი">ზუგდიდი</option>
+        <option value="https://amindi.ge/city/tbilisi/თბილისი">თბილისი</option>
+        <option value="https://amindi.ge/city/telavi/თელავი">თელავი</option>
+        <option value="https://amindi.ge/city/tianeti/თიანეთი">თიანეთი</option>
+        <option value="https://amindi.ge/city/lagodekhi/ლაგოდეხი">ლაგოდეხი</option>
+        <option value="https://amindi.ge/city/lanchkhuti/ლანჩხუთი">ლანჩხუთი</option>
+        <option value="https://amindi.ge/city/manglisi/მანგლისი">მანგლისი</option>
+        <option value="https://amindi.ge/city/marneuli/მარნეული">მარნეული</option>
+        <option value="https://amindi.ge/city/mestia/მესტია">მესტია</option>
+        <option value="https://amindi.ge/city/mtskheta/მცხეთა">მცხეთა</option>
+        <option value="https://amindi.ge/city/ozurgeti/ოზურგეთი">ოზურგეთი</option>
+        <option value="https://amindi.ge/city/omalo/ომალო">ომალო</option>
+        <option value="https://amindi.ge/city/oni/ონი">ონი</option>
+        <option value="https://amindi.ge/city/rustavi/რუსთავი">რუსთავი</option>
+        <option value="https://amindi.ge/city/sagarejo/საგარეჯო">საგარეჯო</option>
+        <option value="https://amindi.ge/city/samtredia/სამტრედია">სამტრედია</option>
+        <option value="https://amindi.ge/city/sachkhere/საჩხერე">საჩხერე</option>
+        <option value="https://amindi.ge/city/senaki/სენაკი">სენაკი</option>
+        <option value="https://amindi.ge/city/sioni/სიონი">სიონი</option>
+        <option value="https://amindi.ge/city/signagi/სიღნაღი">სიღნაღი</option>
+        <option value="https://amindi.ge/city/sukhumi/სოხუმი">სოხუმი</option>
+        <option value="https://amindi.ge/city/surami/სურამი">სურამი</option>
+        <option value="https://amindi.ge/city/ureki/ურეკი">ურეკი</option>
+        <option value="https://amindi.ge/city/ushguli/უშგული">უშგული</option>
+        <option value="https://amindi.ge/city/poti/ფოთი">ფოთი</option>
+        <option value="https://amindi.ge/city/kobuleti/ქობულეთი">ქობულეთი</option>
+        <option value="https://amindi.ge/city/kutaisi/ქუთაისი">ქუთაისი</option>
+        <option value="https://amindi.ge/city/shatili/შატილი">შატილი</option>
+        <option value="https://amindi.ge/city/shekvetili/შეკვეთილი">შეკვეთილი</option>
+        <option value="https://amindi.ge/city/shovi/შოვი">შოვი</option>
+        <option value="https://amindi.ge/city/chokhatauri/ჩოხატაური">ჩოხატაური</option>
+        <option value="https://amindi.ge/city/tskhinvali/ცხინვალი">ცხინვალი</option>
+        <option value="https://amindi.ge/city/tsinandali/წინანდალი">წინანდალი</option>
+        <option value="https://amindi.ge/city/tskneti/წყნეთი">წყნეთი</option>
+        <option value="https://amindi.ge/city/chiatura/ჭიათურა">ჭიათურა</option>
+        <option value="https://amindi.ge/city/kharagauli/ხარაგაული">ხარაგაული</option>
+        <option value="https://amindi.ge/city/khashuri/ხაშური">ხაშური</option>
+        <option value="https://amindi.ge/city/khobi/ხობი">ხობი</option>
+        <option value="https://amindi.ge/city/athens/ათენი">ათენი</option>
+        <option value="https://amindi.ge/city/antalia/ანტალია">ანტალია</option>
+        <option value="https://amindi.ge/city/baku/ბაქო">ბაქო</option>
+        <option value="https://amindi.ge/city/budapest/ბუდაპეშტი">ბუდაპეშტი</option>
+        <option value="https://amindi.ge/city/yerevan/ერევანი">ერევანი</option>
+        <option value="https://amindi.ge/city/vienna/ვენა">ვენა</option>
+        <option value="https://amindi.ge/city/kiev/კიევი">კიევი</option>
+        <option value="https://amindi.ge/city/london/ლონდონი">ლონდონი</option>
+        <option value="https://amindi.ge/city/munich/მიუნიხი">მიუნხენი</option>
+        <option value="https://amindi.ge/city/moscow/მოსკოვი">მოსკოვი</option>
+        <option value="https://amindi.ge/city/new-york/ნიუ-იორკი">ნიუ–იორკი</option>
+        <option value="https://amindi.ge/city/paris/პარიზი">პარიზი</option>
+        <option value="https://amindi.ge/city/prague/პრაღა">პრაღა</option>
+        <option value="https://amindi.ge/city/istanbul/სტამბული">სტამბული</option>
+        <option value="https://amindi.ge/city/tel-aviv/ტელ-ავივი">თელ–ავივი</option>
+</select>
+    <p><input value="ძიება" type="SUBMIT"></p>
+</form>
+
+{% endblock %}
